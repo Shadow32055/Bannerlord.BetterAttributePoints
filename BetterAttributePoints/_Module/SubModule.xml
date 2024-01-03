@@ -1,5 +1,5 @@
 <Module>
-  <Name value="BetterAttributePoints" />
+  <Name value="Better Attribute Points" />
   <Id value="BetterAttributePoints" />
   <Version value="d0.0.0" />
   <ModuleType value="Community" />
@@ -7,10 +7,16 @@
   <Url value="https://www.nexusmods.com/mountandblade2bannerlord/mods/6269" />
   <DependedModules>
     <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.3.0" />
+    <DependedModule Id="Bannerlord.ButterLib" DependentVersion="v2.8.15" />
+    <DependedModule Id="Bannerlord.UIExtenderEx" DependentVersion="v2.8.1" />
+    <DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.9.1" />
+    <DependedModule Id="BetterCore" DependentVersion="v1.0.0" />
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="CustomBattle" />
+    <DependedModule Id="StoryMode" />
   </DependedModules>
-  <DependedModuleMetadatas>
-    <DependedModuleMetadata id="Bannerlord.Harmony" order="LoadBeforeThis" version="v2.3.0" />
-  </DependedModuleMetadatas>
   <SubModules>
     <SubModule>
       <Name value="BetterAttributePoints" />

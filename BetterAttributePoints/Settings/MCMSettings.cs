@@ -4,7 +4,7 @@ using MCM.Abstractions.Base.Global;
 
 namespace BetterAttributePoints.Settings {
 
-    internal class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettings {
+    public class MCMSettings : AttributeGlobalSettings<MCMSettings> {
 
         const string attributeText = "{BA_OUkZom}Attribute Points";
 

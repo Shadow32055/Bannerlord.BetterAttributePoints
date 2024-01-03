@@ -1,19 +1,19 @@
-﻿using HarmonyLib;
-using BetterAttributePoints.Utils;
-using BetterAttributePoints.Settings;
-using TaleWorlds.MountAndBlade;
+﻿using BetterAttributePoints.Settings;
+using BetterCore.Utils;
+using HarmonyLib;
+using MoreAttributePoints.Custom;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.Core;
-using MoreAttributePoints.Custom;
+using TaleWorlds.MountAndBlade;
 
 namespace BetterAttributePoints {
-	public class SubModule : MBSubModuleBase {
+    public class SubModule : MBSubModuleBase {
 
+        public static MCMSettings _settings;
 		protected override void OnSubModuleLoad() {
 			base.OnSubModuleLoad();
 
 			Harmony h = new Harmony("Bannerlord.Shadow.BetterAttributePoints");
-
 
             h.PatchAll();
 		}
@@ -31,12 +31,16 @@ namespace BetterAttributePoints {
         }
 
         protected override void OnBeforeInitialModuleScreenSetAsRoot() {
-			base.OnBeforeInitialModuleScreenSetAsRoot();
+            base.OnBeforeInitialModuleScreenSetAsRoot();
 
-			string modName = base.GetType().Assembly.GetName().Name;
+            string modName = base.GetType().Assembly.GetName().Name;
 
-			Helper.SetModName(modName);
-			Helper.settings = SettingsManager.Instance;
-		}
+            Helper.SetModName(modName);
+            if (MCMSettings.Instance is not null) {
+                _settings = MCMSettings.Instance;
+            } else {
+                Logger.SendMessage("Failed to find settings instance!", Severity.High);
+            }
+        }
     }
 }

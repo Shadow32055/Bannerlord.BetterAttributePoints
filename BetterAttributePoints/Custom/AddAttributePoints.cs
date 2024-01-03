@@ -1,4 +1,6 @@
-﻿using BetterAttributePoints.Utils;
+﻿using BetterAttributePoints;
+using BetterCore.Utils;
+using System;
 using TaleWorlds.CampaignSystem;
 
 namespace MoreAttributePoints.Custom {
@@ -6,7 +8,13 @@ namespace MoreAttributePoints.Custom {
 
         public override void OnHeroLevelledUp(Hero hero, bool shouldNotify = true) {
             base.OnHeroLevelledUp(hero, shouldNotify);
-            hero.HeroDeveloper.UnspentAttributePoints = hero.HeroDeveloper.UnspentAttributePoints + Helper.settings.extraAttPointsPerLevel;
+            try {
+                if (hero.IsHumanPlayerCharacter) {
+                    hero.HeroDeveloper.UnspentAttributePoints = hero.HeroDeveloper.UnspentAttributePoints + SubModule._settings.extraAttPointsPerLevel;
+                }
+            } catch (Exception e) {
+                Logger.SendMessage("AddAttributePoints.OnHeroLevelledUp threw exception " + e, Severity.High);
+            }
         }
     }
 }
