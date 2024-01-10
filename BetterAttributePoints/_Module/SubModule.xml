@@ -21,7 +21,7 @@
     <SubModule>
       <Name value="BetterAttributePoints" />
       <DLLName value="BetterAttributePoints.dll" />
-      <SubModuleClassType value="BetterAttributePoints.SubModule" />
+      <SubModuleClassType value="BetterAttributePoints.BetterAttributePoints" />
       <Tags>
         <Tag key="DedicatedServerType" value="none" />
         <Tag key="IsNoRenderModeElement" value="false" />
