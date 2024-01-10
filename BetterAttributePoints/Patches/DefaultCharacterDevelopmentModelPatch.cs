@@ -11,9 +11,9 @@ namespace BetterAttributePoints.Patches {
         [HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), nameof(DefaultCharacterDevelopmentModel.LevelsPerAttributePoint), MethodType.Getter)]
         public static void LevelsPerAttributePoint(ref int __result) {
             try {
-                __result = SubModule._settings.levelsPerAttributePoint;
+                __result = BetterAttributePoints.Settings.LevelsPerAttributePoint;
             } catch (Exception e) {
-                Logger.SendMessage("DefaultCharacterDevelopmentModel.LevelsPerAttributePoint threw exception " + e, Severity.High);
+                NotifyHelper.ReportError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.LevelsPerAttributePoint threw exception " + e);
             }
         }
 
@@ -21,9 +21,9 @@ namespace BetterAttributePoints.Patches {
         [HarmonyPatch(typeof(DefaultCharacterDevelopmentModel), nameof(DefaultCharacterDevelopmentModel.MaxAttribute), MethodType.Getter)]
         public static void MaxAttribute(ref int __result) {
             try {
-                __result = SubModule._settings.maxAttributeLevel;
+                __result = BetterAttributePoints.Settings.MaxAttributeLevel;
             } catch (Exception e) {
-                Logger.SendMessage("DefaultCharacterDevelopmentModel.MaxAttribute threw exception " + e, Severity.High);
+                NotifyHelper.ReportError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.MaxAttribute threw exception " + e);
             }
         }
     }
