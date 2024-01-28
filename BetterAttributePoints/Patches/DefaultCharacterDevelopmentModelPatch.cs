@@ -13,7 +13,7 @@ namespace BetterAttributePoints.Patches {
             try {
                 __result = BetterAttributePoints.Settings.LevelsPerAttributePoint;
             } catch (Exception e) {
-                NotifyHelper.ReportError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.LevelsPerAttributePoint threw exception " + e);
+                NotifyHelper.WriteError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.LevelsPerAttributePoint threw exception " + e);
             }
         }
 
@@ -23,7 +23,7 @@ namespace BetterAttributePoints.Patches {
             try {
                 __result = BetterAttributePoints.Settings.MaxAttributeLevel;
             } catch (Exception e) {
-                NotifyHelper.ReportError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.MaxAttribute threw exception " + e);
+                NotifyHelper.WriteError(BetterAttributePoints.ModName, "DefaultCharacterDevelopmentModel.MaxAttribute threw exception " + e);
             }
         }
     }
